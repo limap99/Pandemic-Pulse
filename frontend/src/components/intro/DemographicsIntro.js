@@ -8,8 +8,8 @@ const DemographicsIntro = () => (
         <h1 className='page-header'>Demographics</h1>
         <p className='page-description'>  Explore how user from countries with different demographics reacted differently during the pandemic</p>
         <div className="ellipses">
-      <Link to="/covid-cases" className="ellipse ellipse-overview">Overview</Link>
-      <Link to="/lockdowns" className="ellipse ellipse-trends">Trends</Link>
+      <Link to="/demographics-overview" className="ellipse ellipse-overview">Overview</Link>
+      <Link to="/demographics-trends" className="ellipse ellipse-trends">Trends</Link>
     </div>
       </main>
     );

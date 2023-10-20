@@ -7,8 +7,8 @@ const LockdownIntro = () => (
         <h1 className='page-header'>Lockdowns</h1>
         <p className='page-description'>  Explore how different lockdown strategies implemented by different countried affected public sentiment on Twitter</p>
         <div className="ellipses">
-      <Link to="/covid-cases" className="ellipse ellipse-overview">Overview</Link>
-      <Link to="/lockdowns" className="ellipse ellipse-trends">Trends</Link>
+      <Link to="/lockdowns-overview" className="ellipse ellipse-overview">Overview</Link>
+      <Link to="/lockdowns-trends" className="ellipse ellipse-trends">Trends</Link>
     </div>
       </main>
     );

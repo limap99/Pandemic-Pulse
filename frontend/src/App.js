@@ -6,7 +6,14 @@ import CovidCasesIntro from './components/intro/CovidCasesIntro';
 import LockdownIntro from './components/intro/LockdownIntro';
 import VaccinationIntro from './components/intro/VaccinationIntro';
 import DemographicsIntro from './components/intro/DemographicsIntro';
-
+import CovidCasesOverview from './components/overview/CovidCasesOverview';
+import LockdownOverview from './components/overview/LockdownOverview';
+import VaccinationOverview from './components/overview/VaccinationOverview';
+import DemographicsOverview from './components/overview/DemographicsOverview';
+import CovidCasesTrends from './components/trends/CovidCasesTrends';
+import LockdownTrends from './components/trends/LockdownTrends';
+import VaccinationTrends from './components/trends/VaccinationTrends';
+import DemographicsTrends from './components/trends/DemographicsTrends';
 
 
 const App = () => (
@@ -19,6 +26,15 @@ const App = () => (
         <Route path="/lockdowns" element={<LockdownIntro/>} />
         <Route path="/vaccination" element={<VaccinationIntro/>} />
         <Route path="/demographics" element={<DemographicsIntro/>} />
+        <Route path="/covid-cases-overview" element={<CovidCasesOverview/>} />
+        <Route path="/lockdowns-overview" element={<LockdownOverview/>} />
+        <Route path="/vaccination-overview" element={<VaccinationOverview/>} />
+        <Route path="/demographics-overview" element={<DemographicsOverview/>} />
+        <Route path="/covid-cases-trends" element={<CovidCasesTrends/>} />
+        <Route path="/lockdowns-trends" element={<LockdownTrends/>} />
+        <Route path="/vaccination-trends" element={<VaccinationTrends/>} />
+        <Route path="/demographics-trends" element={<DemographicsTrends/>} />
+      
       </Routes>
     </div>
   </Router>
