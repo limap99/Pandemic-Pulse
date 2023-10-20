@@ -4,7 +4,7 @@ import '../../style/Description.css';
 const VaccinationIntro = () => (
     <main>
         <h1 className='page-header'>Vaccination</h1>
-        <p>Your application's objective description here.</p>
+        <p className='page-description'>  Explore the connection between vaccine rollout speed and public sentiment</p>
         {/* <div className="ellipses">
           <Link to="/covid-cases" className="ellipse">COVID-19 Cases</Link>
           <Link to="/lockdowns" className="ellipse">Lockdowns</Link>

@@ -5,7 +5,7 @@ import '../../style/Description.css';
 const LockdownIntro = () => (
     <main>
         <h1 className='page-header'>Lockdowns</h1>
-        <p>Your application's objective description here.</p>
+        <p className='page-description'>  Explore how different lockdown strategies implemented by different countried affected public sentiment on Twitter</p>
         {/* <div className="ellipses">
           <Link to="/covid-cases" className="ellipse">COVID-19 Cases</Link>
           <Link to="/lockdowns" className="ellipse">Lockdowns</Link>

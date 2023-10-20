@@ -1,7 +1,7 @@
 const DemographicsIntro = () => (
     <main>
         <h1 className='page-header'>Demographics</h1>
-        <p>Your application's objective description here.</p>
+        <p className='page-description'>  Explore how user from countries with different demographics reacted differently during the pandemic</p>
         {/* <div className="ellipses">
           <Link to="/covid-cases" className="ellipse">COVID-19 Cases</Link>
           <Link to="/lockdowns" className="ellipse">Lockdowns</Link>
