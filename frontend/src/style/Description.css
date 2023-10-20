@@ -20,3 +20,45 @@
     margin-left: 2rem;
 
 }
+.ellipses {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+  }
+  
+  .ellipse {
+    width: 16rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Jua';
+    ;font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+
+  }
+
+  .ellipse-intro-c19{
+    background-color: #7385DC;
+  }
+  .ellipse-intro-vac{
+    background-color: #8467C1;
+  }
+  .ellipse-intro-loc{
+    background-color: #5987A9;
+  }
+  .ellipse-intro-dem{
+    background-color: #7385DC;
+  }
+  .ellipse-overview{
+    background-color: #0D1953;
+  }
+  .ellipse-trends{
+    background-color: #209AF2;
+  }
