@@ -1,25 +1,27 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes }  from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './components/HomePage'
+import CovidCasesIntro from './components/intro/CovidCasesIntro';
+import LockdownIntro from './components/intro/LockdownIntro';
+import VaccinationIntro from './components/intro/VaccinationIntro';
+import DemographicsIntro from './components/intro/DemographicsIntro';
 
-import './App.css';
 
-function App() {
-  return (
+
+const App = () => (
+  <Router>
     <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/covid-cases" element={<CovidCasesIntro/>} />
+        <Route path="/lockdowns" element={<LockdownIntro/>} />
+        <Route path="/vaccination" element={<VaccinationIntro/>} />
+        <Route path="/demographics" element={<DemographicsIntro/>} />
+      </Routes>
     </div>
-  );
-}
+  </Router>
+);
 
 export default App;
