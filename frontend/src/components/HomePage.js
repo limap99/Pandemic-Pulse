@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../style/Description.css';
 
 const HomePage = () => (
   <main>
+    <h1 className='page-header'>Pandemic Pulse</h1>
     <p>Your application's objective description here.</p>
     <div className="ellipses">
       <Link to="/covid-cases" className="ellipse">COVID-19 Cases</Link>
