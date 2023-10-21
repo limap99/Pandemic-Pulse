@@ -1,0 +1,82 @@
+.page-header{
+    font-family: 'Jua';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.5rem;
+    /* line-height: 88px; */
+    margin-left: 3rem;
+    color: #27267A;
+    margin-bottom: 0rem;
+
+}
+
+.page-description{
+    font-family: 'Jua';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #597B86;
+    margin-left: 2rem;
+
+}
+.ellipses {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+  }
+  
+  .ellipse {
+    width: 16rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Jua';
+    ;font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+
+  }
+
+  .ellipse-intro-c19{
+    background-color: #7385DC;
+  }
+  .ellipse-intro-c19:hover{
+    background-color: #4a5aa9;
+  }
+  .ellipse-intro-vac{
+    background-color: #8467C1;
+  }
+  .ellipse-intro-vac:hover{
+    background-color: #674ba4;
+  }
+  .ellipse-intro-loc{
+    background-color: #5987A9;
+  }
+  .ellipse-intro-loc:hover{
+    background-color: #3a6382;
+  }
+  .ellipse-intro-dem{
+    background-color: #7385DC;
+  }
+  .ellipse-intro-dem:hover{
+    background-color: #101d5d;
+  }
+  .ellipse-overview{
+    background-color: #0D1953;
+  }
+  .ellipse-overview:hover{
+    background-color: #0c25a3;
+  }
+  .ellipse-trends{
+    background-color: #209AF2;
+  }
+  .ellipse-trends:hover{
+    background-color: #1482d1;
+  }
