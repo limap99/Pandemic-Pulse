@@ -2,9 +2,12 @@ from flask import Flask, jsonify
 import oracledb
 from datetime import datetime
 from complex_trend_queries.lockdown_type_trend_query import query as lockdown_type_trend_query
+from flask_cors import CORS
 from complex_trend_queries.covid_cases_trend import query as covid_cases_trend_query
 
+
 app = Flask(__name__)
+CORS(app)
 
 pw = 'IDgyieNge4gljYWFSyopzIZI'
 host = 'oracle.cise.ufl.edu'  # e.g., '127.0.0.1' or 'mydbserver.com'
@@ -58,4 +61,4 @@ def covid_cases_trend():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8080, debug=True)
