@@ -10,8 +10,8 @@ app = Flask(__name__)
 CORS(app)
 
 pw = 'IDgyieNge4gljYWFSyopzIZI'
-host = 'oracle.cise.ufl.edu'  # e.g., '127.0.0.1' or 'mydbserver.com'
-port = '1521'  # e.g., '1521'
+host = 'oracle.cise.ufl.edu' 
+port = '1521'  
 sid = 'orcl'
 dsnStr = oracledb.makedsn("oracle.cise.ufl.edu", 1521, sid="orcl")
 connection = oracledb.connect(user="limap", password="IDgyieNge4gljYWFSyopzIZI", dsn=dsnStr)
