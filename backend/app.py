@@ -4,6 +4,7 @@ from datetime import datetime
 from complex_trend_queries.lockdown_type_trend_query import query as lockdown_type_trend_query
 from flask_cors import CORS
 from complex_trend_queries.covid_cases_trend import query as covid_cases_trend_query
+from complex_trend_queries.demographics_trend_query import query as demographics_trend_query
 
 
 app = Flask(__name__)
@@ -18,8 +19,7 @@ connection = oracledb.connect(user="limap", password="IDgyieNge4gljYWFSyopzIZI",
 cursor = connection.cursor()
 print("Successfully connected to Oracle Database")
 
-
-
+print("hello!")
 
 @app.route('/')
 def index():
@@ -41,6 +41,7 @@ def lockdown_type_trend():
     ]
     return jsonify(formatted_result)
 
+
 @app.route('/covid-cases-trend', methods=['GET'])
 def covid_cases_trend():
     cursor.execute(covid_cases_trend_query)
@@ -58,7 +59,21 @@ def covid_cases_trend():
     ]
     return jsonify(formatted_result)
 
-
+@app.route('/demographics-trends', methods=['GET'])
+def demographics_trend():
+    cursor.execute(demographics_trend_query)
+    result = cursor.fetchall()
+    formatted_result = [
+        {
+            "date": row[0].strftime("%Y-%m-%d"),  # Formatting datetime to date string
+            "country_ID": row[1],
+            "sadness_avg": row[2],
+            "joy_avg": row[3],
+            "fear_avg": row[4],
+            "anger_avg": row[5],
+        } for row in result
+    ]
+    return jsonify(formatted_result)
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
