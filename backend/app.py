@@ -59,6 +59,21 @@ def covid_cases_trend():
     ]
     return jsonify(formatted_result)
 
+@app.route('/vaccination-trend', methods=['GET'])
+def vaccination_trend():
+    cursor.execute(weekly_vaccination_trend)
+    result = cursor.fetchall()
+    formatted_result = [
+        {
+            "total_doses_administered": row[2],
+            "sadness_trend": row[2],
+            "joy_trend": row[3],
+            "fear_trend": row[4],
+            "anger_trend": row[5]
+        } for row in result
+    ]
+    return jsonify(formatted_result)
+
 @app.route('/demographics-trends', methods=['GET'])
 def demographics_trend():
     cursor.execute(demographics_trend_query)
@@ -74,6 +89,7 @@ def demographics_trend():
         } for row in result
     ]
     return jsonify(formatted_result)
+
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
