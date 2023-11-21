@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 import oracledb
 from datetime import datetime
 from complex_trend_queries.lockdown_type_trend_query import query as lockdown_type_trend_query
+from complex_trend_queries.lockdown_date_trend_query import query as lockdown_date_trend_query
 from flask_cors import CORS
 from complex_trend_queries.covid_cases_trend import query as covid_cases_trend_query
 from complex_trend_queries.demographics_trend_query import query as demographics_trend_query
@@ -28,6 +29,22 @@ def index():
 @app.route('/lockdown-type-trend', methods=['GET'])
 def lockdown_type_trend():
     cursor.execute(lockdown_type_trend_query)
+    result = cursor.fetchall()
+    formatted_result = [
+        {
+            "date": row[0].strftime("%Y-%m-%d"),  # Formatting datetime to date string
+            "lockdown_status": row[1],
+            "sadness_trend": row[2],
+            "joy_trend": row[3],
+            "fear_trend": row[4],
+            "anger_trend": row[5]
+        } for row in result
+    ]
+    return jsonify(formatted_result)
+
+@app.route('/lockdown-date-trend', methods=['GET'])
+def lockdown_date_trend():
+    cursor.execute(lockdown_date_trend_query)
     result = cursor.fetchall()
     formatted_result = [
         {

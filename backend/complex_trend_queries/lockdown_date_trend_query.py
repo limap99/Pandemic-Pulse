@@ -22,7 +22,7 @@ EmotionalAverage AS (
 )
 
 SELECT
-  EmotionalAverage.Reported_Date,
+  TRUNC(EmotionalAverage.Reported_Date, 'IW') AS week_start,
   LockdownCategory.Lockdown_Status,
   AVG(EmotionalAverage.Avg_Sadness) AS Sadness_Trend,
   AVG(EmotionalAverage.Avg_Joy) AS Joy_Trend,
@@ -30,6 +30,8 @@ SELECT
   AVG(EmotionalAverage.Avg_Anger) AS Anger_Trend
 FROM EmotionalAverage
 JOIN LockdownCategory ON EmotionalAverage.Country_ID = LockdownCategory.Country_ID
-GROUP BY EmotionalAverage.Reported_Date, LockdownCategory.Lockdown_Status
-ORDER BY EmotionalAverage.Reported_Date, LockdownCategory.Lockdown_Status
+GROUP BY TRUNC(EmotionalAverage.Reported_Date, 'IW'), LockdownCategory.Lockdown_Status
+ORDER BY week_start, LockdownCategory.Lockdown_Status
+
+
 """
