@@ -19,19 +19,21 @@ EmotionalAverageDelta AS(
         t2.Avg_Fear - t1.Avg_Fear AS Fear_Delta,
         t2.Avg_Anger - t1.Avg_Anger AS Anger_Delta
     FROM LIMAP.EmotionalAverage t1
-    JOIN LIMAP.EmotionalAverage t2 ON (t1.Country_ID = t2.Country_ID AND t1.Reported_Date = t2.Reported_Date + 1)
+    JOIN LIMAP.EmotionalAverage t2 ON (t1.Country_ID = t2.Country_ID AND t1.Reported_Date + 1 = t2.Reported_Date)
 )
 ,
 CovidCasesDelta AS(
     SELECT t2.Reported_Date, t2.Country_ID, t2.Confirmed_Cases - t1.Confirmed_Cases AS Cases_Delta
     FROM LIMAP.Covid_Cases t1
-    JOIN LIMAP.Covid_Cases t2 ON (t1.Country_ID = t2.Country_ID AND t1.Reported_Date = t2.Reported_Date + 1)
+    JOIN LIMAP.Covid_Cases t2 ON (t1.Country_ID = t2.Country_ID AND t1.Reported_Date + 1 = t2.Reported_Date)
 )
 
-SELECT ead.Reported_Date, ead.Country_ID, ead.Sadness_Delta, ead.Joy_Delta, ead.Fear_Delta, ead.Anger_Delta, ccd.Cases_Delta
+SELECT TRUNC(ead.Reported_Date, 'IW') AS week_start
+, ead.Country_ID, SUM(ead.Sadness_Delta), SUM(ead.Joy_Delta), SUM(ead.Fear_Delta), SUM(ead.Anger_Delta), SUM(ccd.Cases_Delta)
 FROM EmotionalAverageDelta ead
 JOIN CovidCasesDelta ccd ON (ead.Reported_Date = ccd.Reported_Date AND ead.Country_ID = ccd.Country_ID)
-ORDER BY ead.Country_ID, ead.Reported_Date
+GROUP BY TRUNC(ead.Reported_Date, 'IW'), ead.Country_ID
+ORDER BY ead.Country_ID, TRUNC(ead.Reported_Date, 'IW')
 
 
 """
