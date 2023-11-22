@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../style/Description.css';
 import LockdownTrendsType from './LockdownTrendsType';
 import LockdownTrendsDate from './LockdownTrendsDate';
+import { Link } from 'react-router-dom';
 import LockdownTypeAngryChart from '../charts/lockdown-type/LockdownTypeAngryChart';
 import LockdownTypeJoyChart from '../charts/lockdown-type/LockdownTypeJoyChart';
 import LockdownTypeFearChart from '../charts/lockdown-type/LockdownTypeFearChart';
@@ -22,6 +23,7 @@ const LockdownTrends= () => {
 
 return(
   <main>
+    <Link to="/lockdowns" className="back-link">back</Link>
       <h1 className='page-header'>Lockdown Trends</h1>
 
       
