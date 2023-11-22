@@ -44,6 +44,13 @@
 
   }
 
+  .back-link{
+    font-family: 'Montserrat';
+    margin-left: 1rem;
+    text-decoration: underline;
+    color: #5e73d0
+  }
+
   .ellipse-intro-c19{
     background-color: #7385DC;
   }
@@ -94,4 +101,22 @@
     margin-bottom: 1rem;
     font-weight: bold;
     font-family: 'Montserrat';
+  }
+
+  table {
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    width: 70%; /* Adjust the width as needed */
+    
+  }
+  
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-family: 'Montserrat';
+  }
+  
+  thead th {
+    background-color: #a7d9ebde;;
   }

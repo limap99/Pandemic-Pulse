@@ -3,7 +3,7 @@ WITH LockdownCategory AS (
   SELECT
     Country_ID,
     CASE
-      WHEN Start_Date <= to_date('15-Mar-20', 'DD-MON-YY') THEN 'Early'
+      WHEN Start_Date <= to_date('16-Mar-20', 'DD-MON-YY') THEN 'Early'
       ELSE 'Late'
     END AS Lockdown_Status
   FROM Lockdown
