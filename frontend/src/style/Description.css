@@ -88,3 +88,10 @@
   height: 200px;
 
   }
+  .view-selector{
+    margin-left: 80rem;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-family: 'Montserrat';
+  }

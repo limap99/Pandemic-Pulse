@@ -32,7 +32,7 @@ const LockdownTypeJoyChart = ({data}) => {
     plugins: {
       title: {
         display: true,
-        text: 'Lockdown Status and Emotional Intensity Over Time',
+        text: 'Lockdown Status and Joy Intensity Over Time',
         font: {
           size: 18
         }
