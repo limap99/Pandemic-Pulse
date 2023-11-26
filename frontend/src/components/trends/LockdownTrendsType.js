@@ -89,6 +89,33 @@ return(
     <LockdownTypeJoyChart data={dataTrendType} />
     <LockdownTypeFearChart data={dataTrendType} />
     <LockdownTypeSadnessChart data={dataTrendType} />
+
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Lockdown Status</th>
+            <th>Anger Intensity</th>
+            <th>Fear Intensity</th>
+            <th>Joy Intensity</th>
+            <th>Sadness Intensity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dataTrendType.map((item, index) => (
+            <tr key={index}>
+              <td>{item.date}</td>
+              <td>{item.lockdown_status}</td>
+              <td>{item.anger_trend.toFixed(3)}</td>
+              <td>{item.fear_trend.toFixed(3)}</td>
+              <td>{item.joy_trend.toFixed(3)}</td>
+              <td>{item.sadness_trend.toFixed(3)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </div>
 )
 
