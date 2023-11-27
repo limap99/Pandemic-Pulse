@@ -7,6 +7,8 @@ from flask_cors import CORS
 from complex_trend_queries.covid_cases_trend import query as covid_cases_trend_query
 from complex_trend_queries.demographics_trend_query import query as demographics_trend_query
 
+from complex_trend_queries.weekly_vaccination_trend import query as weekly_vaccination_trend_query
+
 
 app = Flask(__name__)
 CORS(app)
@@ -78,15 +80,17 @@ def covid_cases_trend():
 
 @app.route('/vaccination-trend', methods=['GET'])
 def vaccination_trend():
-    cursor.execute(weekly_vaccination_trend)
+    cursor.execute(weekly_vaccination_trend_query)
     result = cursor.fetchall()
     formatted_result = [
         {
+            "date": row[0].strftime("%Y-%m-%d"),
+            "country_ID": row[1],
             "total_doses_administered": row[2],
-            "sadness_trend": row[2],
-            "joy_trend": row[3],
-            "fear_trend": row[4],
-            "anger_trend": row[5]
+            "sadness_trend": row[3],
+            "joy_trend": row[4],
+            "fear_trend": row[5],
+            "anger_trend": row[6]
         } for row in result
     ]
     return jsonify(formatted_result)
