@@ -28,6 +28,12 @@
     text-decoration: underline;
 
 }
+
+.grid-header:hover{
+    color: #b395ee;
+  
+
+}
 .grid-description{
     font-family: 'Jua';
     font-style: normal;
@@ -47,4 +53,8 @@
     border-radius: 2rem;
     color: white;
     cursor: pointer;
+}
+
+.button-overview:hover{
+    background-color: #8d1e08;
 }
