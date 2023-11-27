@@ -17,7 +17,7 @@ WeeklyVaccination AS (
       TRUNC(Vaccination.Reported_Date, 'IW') AS Reported_Week,
       Vaccination.country_id AS country_id,
       SUM(Vaccination.Total_Doses_Administered ) AS Total_Doses_Administered
-    FROM LIMAP.Vaccination where country_id = 'USA'
+    FROM LIMAP.Vaccination
     GROUP BY TRUNC(Vaccination.Reported_Date, 'IW'), Vaccination.Country_ID
     ORDER BY Reported_Week
 ),

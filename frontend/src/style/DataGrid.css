@@ -1,0 +1,50 @@
+.data-overview-container {
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem;
+    gap: 20px;
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #0c5169;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grid-header{
+    font-family: 'Jua';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #d0ffca;
+    text-decoration: underline;
+
+}
+.grid-description{
+    font-family: 'Jua';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: white;
+}
+
+.button-overview {
+    margin-top: auto;
+    align-self: center;
+    font-size: 1.3rem;
+    font-family: 'Jua';
+    font-style: normal;
+    background-color: #ff5735;
+    border-radius: 2rem;
+    color: white;
+    cursor: pointer;
+}

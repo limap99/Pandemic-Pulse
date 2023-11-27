@@ -40,6 +40,15 @@ const Navbar = () => {
         >
          Demographics
         </Link>
+
+        <Link
+          to="/data-overview"
+          className={
+            location.pathname === '/data-overview' ? 'active' : ''
+          }
+        >
+         Data Overview
+        </Link>
         
         
       </div>

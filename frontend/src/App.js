@@ -14,6 +14,7 @@ import CovidCasesTrends from './components/trends/CovidCasesTrends';
 import LockdownTrends from './components/trends/LockdownTrends';
 import VaccinationTrends from './components/trends/VaccinationTrends';
 import DemographicsTrends from './components/trends/DemographicsTrends';
+import DataOverview from './components/intro/DataOverview';
 
 
 const App = () => (
@@ -34,6 +35,7 @@ const App = () => (
         <Route path="/lockdowns-trends" element={<LockdownTrends/>} />
         <Route path="/vaccination-trends" element={<VaccinationTrends/>} />
         <Route path="/demographics-trends" element={<DemographicsTrends/>} />
+        <Route path="/data-overview" element={<DataOverview/>} />
       
       </Routes>
     </div>

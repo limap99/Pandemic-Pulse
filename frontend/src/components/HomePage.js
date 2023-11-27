@@ -14,6 +14,9 @@ const HomePage = () => (
       <Link to="/vaccination" className="ellipse ellipse-intro-vac">Vaccination</Link>
       <Link to="/demographics" className="ellipse ellipse-intro-dem">Demographics</Link>
     </div>
+    <div className="data-overview">
+      <Link to="/data-overview" className="ellipse data-overview">Data Overview</Link>
+    </div>
   </main>
 );
 
