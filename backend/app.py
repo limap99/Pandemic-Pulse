@@ -8,7 +8,7 @@ from complex_trend_queries.covid_cases_trend import query as covid_cases_trend_q
 from complex_trend_queries.demographics_trend_query import query as demographics_trend_query
 
 from complex_trend_queries.weekly_vaccination_trend import query as weekly_vaccination_trend_query
-
+from complex_trend_queries.data_overview import query as data_overview_query
 
 app = Flask(__name__)
 CORS(app)
@@ -27,6 +27,23 @@ print("hello!")
 @app.route('/')
 def index():
     return "Welcome to the Flask Oracle API!"
+
+@app.route('/data-overview', methods=['GET'])
+def data_overview():
+    cursor.execute(data_overview_query)
+    result = cursor.fetchall()
+    formatted_result = [
+        {
+            "tweet_count": row[0],  # Formatting datetime to date string
+            "per_country_tweet_count": row[1],
+            "country_count": row[2],
+            "total_vaccination_count": row[3],
+            "per_country_vaccination_count": row[4],
+            "covid_cases_count": row[5],
+            "per_country_covid_cases_count": row[6]
+        } for row in result
+    ]
+    return jsonify(formatted_result)
 
 @app.route('/lockdown-type-trend', methods=['GET'])
 def lockdown_type_trend():
