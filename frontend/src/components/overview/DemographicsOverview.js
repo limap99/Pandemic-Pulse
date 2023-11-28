@@ -4,67 +4,40 @@ import '../../style/Description.css';
 const DemographicsOverview= () => {
 
   const data = [
-    { country: 'South Korea', type: 'Partial', date: 'Early' },
-    { country: 'Canada', type: 'Partial', date: 'Early' },
-    { country: 'United Kingdom', type: 'Full', date: 'Late' },
-    { country: 'United States', type: 'Partial', date: 'Late' },
-    { country: 'France', type: 'Full', date: 'Early' },
-    { country: 'Brazil', type: 'Partial', date: 'Late' },
+    { country: 'South Korea', age: 44.5, population: 51784059 },
+    { country: 'Canada', age: 40.6, population: 38781291 },
+    { country: 'United Kingdom', age: 40.2, population: 66460344 },
+    { country: 'United States', age: 37.6, population: 326687501 },
+    { country: 'France', age: 41.2, population: 66977107 },
+    { country: 'Brazil', age: 31.3, population: 209469333 },
   ];
 
 
 return(
   <main>
-    <Link to="/lockdowns" className="back-link">back</Link>
-    <h1 className='page-header'>Lockdown Overview</h1>
+    <Link to="/demographics" className="back-link">back</Link>
+    <h1 className='page-header'>Demographics Overview</h1>
     
     <table>
+      <thead>  
+        <tr>    
+        <th>Country</th>
+        <th>Mean Age</th>
+        <th>Population</th>
+        </tr>  
+      </thead>
 
       
-<thead>
-
-        
-<tr>
-
-          
-<th>Country</th>
-
-          
-<th>Lockdown Implementation Type</th>
-
-          
-<th>Lockdown Implementation Timeline</th>
-
-        
-</tr>
-
-      
-</thead>
-
-      
-<tbody>
+      <tbody>
         {data.map((item) => (
-          <tr
- 
-key={item.country}>
-
-            
-<td>{item.country}</td>
-
-            
-<td>{item.type}</td>
-
-            
-<td>{item.date}</td>
-
-          
-</tr>
+          <tr key={item.country}> 
+            <td>{item.country}</td>
+            <td>{item.age}</td>
+            <td>{item.population}</td>
+          </tr>
         ))}
       </tbody>
-
-    
-</table>
-
+    </table>
   </main>
 )
 };
