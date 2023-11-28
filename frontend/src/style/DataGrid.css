@@ -6,14 +6,14 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 1rem;
-    gap: 20px;
+    gap: 100px;
 }
 
 .grid-item {
     border: 1px solid #ccc;
     padding: 15px;
-    border-radius: 5px;
-    background-color: #0c5169;
+    /* border-radius: 5rem; */
+    background-color: #209AF2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,3 +58,54 @@
 .button-overview:hover{
     background-color: #8d1e08;
 }
+
+.table-header{
+    text-align: center;
+    color: #e19e50;
+    font-size: 2.5rem;
+}
+
+.database-table {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: 'Montserrat';
+  }
+  
+  .database-table h2, .database-table h3 {
+    color: #333;
+  }
+  
+  .database-table p {
+    color: #666;
+  }
+  
+  .database-table ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .database-table ul li {
+    background-color: #e7e7e7;
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+
+  .source-style{
+    background-color: #b1dded;
+  }
+
+  .table-selection{
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    font-weight: bold;
+    font-family: 'Montserrat'
+  }
+  .table-loading{
+    font-size: 1.5rem;
+    color: #308acd;
+  }

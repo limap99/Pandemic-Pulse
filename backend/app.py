@@ -8,7 +8,12 @@ from complex_trend_queries.covid_cases_trend import query as covid_cases_trend_q
 from complex_trend_queries.demographics_age_trend_query import query as demographics_age_trend_query
 from complex_trend_queries.demographics_population_trend_query import query as demographics_population_trend_query
 from complex_trend_queries.weekly_vaccination_trend import query as weekly_vaccination_trend_query
-from complex_trend_queries.data_overview import query as data_overview_query
+from complex_trend_queries.data_overview import tweet_query as tweet_query
+from complex_trend_queries.data_overview import country_query as country_query
+from complex_trend_queries.data_overview import lockdown_query as lockdown_query
+from complex_trend_queries.data_overview import vaccination_query as vaccination_query
+from complex_trend_queries.data_overview import covid_cases_query as covid_cases_query
+from complex_trend_queries.data_overview import count_query as count_query
 
 app = Flask(__name__)
 CORS(app)
@@ -26,19 +31,95 @@ print("Successfully connected to Oracle Database")
 def index():
     return "Welcome to the Flask Oracle API!"
 
-@app.route('/data-overview', methods=['GET'])
-def data_overview():
-    cursor.execute(data_overview_query)
+@app.route('/count', methods=['GET'])
+def count():
+    cursor.execute(count_query)
     result = cursor.fetchall()
     formatted_result = [
         {
-            "tweet_count": row[0],  # Formatting datetime to date string
-            "per_country_tweet_count": row[1],
-            "country_count": row[2],
-            "total_vaccination_count": row[3],
-            "per_country_vaccination_count": row[4],
-            "covid_cases_count": row[5],
-            "per_country_covid_cases_count": row[6]
+            "tweet": row[0],
+            "vaccination": row[1],  
+            "lockdown": row[2],
+            "country": row[3],
+            "covid_cases": row[4]
+
+        } for row in result
+    ]
+    return jsonify(formatted_result)
+
+@app.route('/tweet', methods=['GET'])
+def tweet():
+    cursor.execute(tweet_query)
+    result = cursor.fetchall()
+    formatted_result = [
+        {
+            "tweet_id": row[0],
+            "tweet_date": row[1].strftime("%Y-%m-%d"),  # Formatting datetime to date string
+            "sadness_intensity": row[2],
+            "joy_intensity": row[3],
+            "fear_intensity": row[4],
+            "anger_intensity": row[5],
+            "country_id": row[6],
+
+        } for row in result
+    ]
+    return jsonify(formatted_result)
+@app.route('/country', methods=['GET'])
+def country():
+    cursor.execute(country_query)
+    result = cursor.fetchall()
+    formatted_result = [
+        {
+            "country_id": row[0],
+            "country_name": row[1],  # Formatting datetime to date string
+            "mean_age": row[2],
+            "population": row[3],
+    
+
+        } for row in result
+    ]
+    return jsonify(formatted_result)
+
+@app.route('/lockdown', methods=['GET'])
+def lockdown():
+    cursor.execute(lockdown_query)
+    result = cursor.fetchall()
+    formatted_result = [
+        {
+            "lockdown_type": row[0],
+            "start_date": row[1].strftime("%Y-%m-%d"),  # Formatting datetime to date string
+            "country_id": row[2],
+
+        } for row in result
+    ]
+    return jsonify(formatted_result)
+
+@app.route('/vaccination', methods=['GET'])
+def vaccination():
+    cursor.execute(vaccination_query)
+    result = cursor.fetchall()
+    formatted_result = [
+        {
+            "vaccination_id": row[0],
+            "reported_date": row[1].strftime("%Y-%m-%d"),  # Formatting datetime to date string
+            "total_doses_administered": row[2], 
+            "country_id": row[3]
+
+        } for row in result
+    ]
+    return jsonify(formatted_result)
+
+@app.route('/covid-cases', methods=['GET'])
+def covidCases():
+    cursor.execute(covid_cases_query)
+    result = cursor.fetchall()
+    formatted_result = [
+        {
+            "covid_cases_id": row[0],
+            "reported_date": row[1].strftime("%Y-%m-%d"),  # Formatting datetime to date string
+            "confirmed_cases": row[2],
+            "country_id": row[3],
+
         } for row in result
     ]
     return jsonify(formatted_result)
