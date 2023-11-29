@@ -12,7 +12,7 @@ const VaccinationSadnessChart = ({data}) => {
     datasets: [
       {
         label: 'Vaccination Trend',
-        data: data.filter(item => item.country_ID === 'BRA').map(item => item.weekly_vaccination), // Assuming 'value' is the float value
+        data: data.filter(item => item.country_ID === 'BRA').map(item => item.total_doses_administered), // Assuming 'value' is the float value
         borderColor: 'teal',
         backgroundColor: 'teal',
         yAxisID: 'y'
