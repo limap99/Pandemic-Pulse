@@ -9,6 +9,7 @@ const VaccinationTrends = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [viewType, setViewType] = useState('BRA'); 
 
 
 
@@ -56,10 +57,76 @@ return(
       <h1 className='page-header'>Vaccination Trend</h1>
       <p className='page-description'>  Explore the connection between vaccine rollout speed and public sentiment</p>
 
-      <VaccinationAngerChart data={data}/>
-      <VaccinationFearChart data={data}/>
-      <VaccinationJoyChart data={data}/>
-      <VaccinationSadnessChart data={data}/>
+      <div className="view-selector">
+        <label>
+          <input
+            type="radio"
+            name="viewType"
+            value="BRA"
+            checked={viewType === 'BRA'}
+            onChange={() => setViewType('BRA')}
+          />
+          Brazil
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="viewType"
+            value="CAN"
+            checked={viewType === 'CAN'}
+            onChange={() => setViewType('CAN')}
+          />
+          Canada
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="viewType"
+            value="FRA"
+            checked={viewType === 'FRA'}
+            onChange={() => setViewType('FRA')}
+          />
+          France
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="viewType"
+            value="KOR"
+            checked={viewType === 'KOR'}
+            onChange={() => setViewType('KOR')}
+          />
+          South Korea
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="viewType"
+            value="GBR"
+            checked={viewType === 'GBR'}
+            onChange={() => setViewType('GBR')}
+          />
+          United Kingdom
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="viewType"
+            value="USA"
+            checked={viewType === 'USA'}
+            onChange={() => setViewType('USA')}
+          />
+          United States
+        </label>
+        
+        {/* <button onClick={applyViewType}>Apply</button> */}
+  
+      </div>
+
+      <VaccinationAngerChart data={data} country={viewType}/>
+      <VaccinationFearChart data={data} country={viewType}/>
+      <VaccinationJoyChart data={data} country={viewType}/>
+      <VaccinationSadnessChart data={data} country={viewType}/>
       <div>
       <table>
         <thead>

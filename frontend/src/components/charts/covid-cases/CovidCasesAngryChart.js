@@ -4,7 +4,7 @@ import 'chart.js/auto';
 
 
 
-const CovidCasesAngryChart = ({data}) => {
+const CovidCasesAngryChart = ({data, country}) => {
 
   // Format your data to fit into the chart
   const chartData = {

@@ -4,22 +4,22 @@ import 'chart.js/auto';
 
 
 
-const VaccinationSadnessChart = ({data}) => {
+const VaccinationSadnessChart = ({data, country}) => {
 
   // Format your data to fit into the chart
   const chartData = {
-    labels: data.filter(item => item.country_ID === 'BRA').map(item => item.date), // Assuming 'date' is the property in your data
+    labels: data.filter(item => item.country_ID === `${country}`).map(item => item.date), // Assuming 'date' is the property in your data
     datasets: [
       {
         label: 'Vaccination Trend',
-        data: data.filter(item => item.country_ID === 'BRA').map(item => item.total_doses_administered), // Assuming 'value' is the float value
+        data: data.filter(item => item.country_ID === `${country}`).map(item => item.total_doses_administered), // Assuming 'value' is the float value
         borderColor: 'teal',
         backgroundColor: 'teal',
         yAxisID: 'y'
       },
       {
         label: 'Joy Trend',
-        data: data.filter(item => item.country_ID === 'BRA').map(item => item.sadness_trend), // Assuming 'value' is the float value
+        data: data.filter(item => item.country_ID === `${country}`).map(item => item.sadness_trend), // Assuming 'value' is the float value
         borderColor: 'red',
         backgroundColor: 'red',
         yAxisID: 'y1'
