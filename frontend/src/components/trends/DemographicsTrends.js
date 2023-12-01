@@ -10,6 +10,8 @@ const DemographicsTrends= () => {
   return (
     <main>
       <h1 className='page-header'>Demographics Trends</h1>
+      <p className='page-description'>  Explore how user from countries with different demographics reacted differently during the pandemic</p>
+
 
       <div className="view-selector">
         <label>

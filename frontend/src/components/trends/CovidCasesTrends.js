@@ -54,6 +54,8 @@ const CovidCasesTrends = () => {
 return(
   <main>
       <h1 className='page-header'>Covid Cases Trends</h1>
+      <p className='page-description'>   Explore how the spike and drop of COVID-19 case numbers affects public sentiment on twitter for each country,</p>
+
       <CovidCasesAngryChart data={data}/>
       <CovidCasesFearChart data={data}/>
       <CovidCasesJoyChart data={data}/>

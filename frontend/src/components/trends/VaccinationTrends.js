@@ -54,6 +54,8 @@ const VaccinationTrends = () => {
 return(
   <main>
       <h1 className='page-header'>Vaccination Trend</h1>
+      <p className='page-description'>  Explore the connection between vaccine rollout speed and public sentiment</p>
+
       <VaccinationAngerChart data={data}/>
       <VaccinationFearChart data={data}/>
       <VaccinationJoyChart data={data}/>
