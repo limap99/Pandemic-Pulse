@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../../style/Description.css';
-import { Grid } from 'gridjs-react';
-
-import { Container, Item, Table } from 'semantic-ui-react'
 
 const LockdownOverview= () => {
   const [viewType, setViewType] = useState('type'); // 'date' or 'type'
