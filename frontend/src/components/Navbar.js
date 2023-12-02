@@ -18,27 +18,36 @@ const Navbar = () => {
           Home
         </Link>
         
-        <Link to="/covid-cases" className={location.pathname === '/covid-cases' ? 'active' : ''}>
+        <Link to="/covid-cases-trends" className={location.pathname === '/covid-cases-trends' ? 'active' : ''}>
           Covid-19 Cases
         </Link>
         <Link
-          to="/lockdowns"
+          to="/lockdowns-trends"
           className={
-            location.pathname === '/lockdowns' ? 'active' : ''
+            location.pathname === '/lockdowns-trends' ? 'active' : ''
           }
         >
         Lockdowns
         </Link>
-        <Link to="/vaccination" className={location.pathname === '/vaccination' ? 'active' : ''}>
+        <Link to="/vaccination-trends" className={location.pathname === '/vaccination-trends' ? 'active' : ''}>
           Vaccination
         </Link>
         <Link
-          to="/demographics"
+          to="/demographics-trends"
           className={
-            location.pathname === '/demographics' ? 'active' : ''
+            location.pathname === '/demographics-trends' ? 'active' : ''
           }
         >
          Demographics
+        </Link>
+
+        <Link
+          to="/data-overview"
+          className={
+            location.pathname === '/data-overview' ? 'active' : ''
+          }
+        >
+         Data Overview
         </Link>
         
         

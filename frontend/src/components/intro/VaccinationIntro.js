@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../style/Description.css';
 const VaccinationIntro = () => (
     <main>
+      <Link to="/" className="back-link">back</Link>
         <h1 className='page-header'>Vaccination</h1>
         <p className='page-description'>  Explore the connection between vaccine rollout speed and public sentiment</p>
         <div className="ellipses">

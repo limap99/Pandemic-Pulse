@@ -44,6 +44,13 @@
 
   }
 
+  .back-link{
+    font-family: 'Montserrat';
+    margin-left: 1rem;
+    text-decoration: underline;
+    color: #5e73d0
+  }
+
   .ellipse-intro-c19{
     background-color: #7385DC;
   }
@@ -63,7 +70,7 @@
     background-color: #3a6382;
   }
   .ellipse-intro-dem{
-    background-color: #7385DC;
+    background-color: #574B9C;
   }
   .ellipse-intro-dem:hover{
     background-color: #101d5d;
@@ -79,4 +86,45 @@
   }
   .ellipse-trends:hover{
     background-color: #1482d1;
+  }
+
+  .chart-stye{
+  width: 100%;
+  height: 200px;
+  min-width: 0px;
+  height: 200px;
+
+  }
+  .view-selector{
+    margin-left: 78rem;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-family: 'Montserrat';
+  }
+
+  table {
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    width: 70%; /* Adjust the width as needed */
+    
+  }
+  
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-family: 'Montserrat';
+  }
+  
+  thead th {
+    background-color: #a7d9ebde;;
+  }
+
+  .data-overview{
+    background: #ffffff;
+    text-decoration: underline;
+    color: #1a7bac;
+    border-radius: 0;
+    cursor: pointer;
   }

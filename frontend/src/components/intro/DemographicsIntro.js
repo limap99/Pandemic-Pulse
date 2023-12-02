@@ -5,6 +5,7 @@ import '../../style/Description.css';
 
 const DemographicsIntro = () => (
     <main>
+      <Link to="/" className="back-link">back</Link>
         <h1 className='page-header'>Demographics</h1>
         <p className='page-description'>  Explore how user from countries with different demographics reacted differently during the pandemic</p>
         <div className="ellipses">
