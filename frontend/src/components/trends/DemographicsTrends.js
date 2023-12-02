@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../../style/Description.css';
 import DemographicsAgeTrends from './DemographicsAgeTrends';
 import DemographicsPopulationTrends from './DemographicsPopulationTrends';
@@ -9,6 +10,7 @@ const DemographicsTrends= () => {
 
   return (
     <main>
+      <Link to="/" className="back-link">back</Link>
       <h1 className='page-header'>Demographics Trends</h1>
       <p className='page-description'>  Explore how user from countries with different demographics reacted differently during the pandemic</p>
 

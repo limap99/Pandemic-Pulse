@@ -54,6 +54,7 @@ const CovidCasesTrends = () => {
 
 return(
   <main>
+    <Link to="/" className="back-link">back</Link>
       <h1 className='page-header'>Covid Cases Trends</h1>
       <p className='page-description'>   Explore how the weekly change in reported COVID-19 case numbers affects public sentiment on twitter for each country,</p>
       <div className="view-selector">

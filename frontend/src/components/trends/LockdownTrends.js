@@ -23,7 +23,7 @@ const LockdownTrends= () => {
 
 return(
   <main>
-    <Link to="/lockdowns" className="back-link">back</Link>
+    <Link to="/" className="back-link">back</Link>
       <h1 className='page-header'>Lockdown Trends</h1>
       <p className='page-description'>  Compare how different lockdown strategies affected public sentiment on Twitter</p>
 
